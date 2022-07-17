@@ -1,0 +1,19 @@
+.nav-main {
+  background-color: black;
+  color: white;
+}
+
+.nav-box-horizontal {
+  /* display: flex; */
+}
+
+.nav-vertical {
+}
+
+.nav-link:hover {
+  transition: color 300ms;
+}
+
+.nav-link:hover {
+  color: grey;
+}
