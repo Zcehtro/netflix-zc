@@ -1,19 +1,26 @@
-.nav-main {
+.navbar-main {
   background-color: black;
+}
+
+.navbar-box-horizontal {
+  text-decoration: none;
   color: white;
 }
 
-.nav-box-horizontal {
-  /* display: flex; */
+.navbar-box-horizontal a {
+  text-decoration: none;
+  color: white;
+  padding-right: 0.5rem;
 }
 
-.nav-vertical {
+.navbar-vertical {
 }
 
-.nav-link:hover {
+.navbar-link {
   transition: color 300ms;
+  padding-right: 0.5rem;
 }
 
-.nav-link:hover {
+.navbar-link:hover {
   color: grey;
 }
