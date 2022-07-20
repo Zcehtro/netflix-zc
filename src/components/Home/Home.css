@@ -1,0 +1,24 @@
+.home-main {
+  /* border: 1px red solid; */
+  background-color: black;
+}
+
+.film-carousel {
+  /* display: flex; */
+  /* width: 100%; */
+}
+
+.film-div-img {
+  /* margin: 0.5rem 0; */
+  /* border: 1px solid blue; */
+}
+
+.film-poster-image {
+  border: 2px solid hsla(0, 0%, 100%, 0.8);
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.film-poster-image:hover {
+    transform: scale(1.1);
+}
