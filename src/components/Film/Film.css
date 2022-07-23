@@ -1,0 +1,9 @@
+.film-backdrop {
+  width: 100%;
+}
+
+.div-film-backdrop {
+    width: 95vw;
+    max-width: 900px;
+    margin: auto;
+}

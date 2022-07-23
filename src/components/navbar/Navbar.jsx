@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import reactLogo from "../../assets/logo192.png";
 
 export default function NavBar() {
   return (
@@ -9,7 +10,7 @@ export default function NavBar() {
           <div className="col-1 d-flex justify-content-center">
             <Link to="">
               <img
-                src=".\logo192.png"
+                src={reactLogo}
                 width="30"
                 height="30"
                 className="d-inline-block align-top"

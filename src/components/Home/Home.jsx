@@ -1,5 +1,6 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -29,11 +30,13 @@ export default function Home() {
               return (
                 <div className="col m-2" key={film.id}>
                   <div className="film-div-img">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w200${film.poster_path}`}
-                      alt="film-poster"
-                      className="film-poster-image"
-                    />
+                    <Link to={`/films/${film.id}`}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w200${film.poster_path}`}
+                        alt="film-poster"
+                        className="film-poster-image"
+                      />
+                    </Link>
                   </div>
                 </div>
               );
