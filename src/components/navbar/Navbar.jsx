@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import reactLogo from "../../assets/logo192.png";
+import navbarLinks from "./Navbar-links";
 
 export default function NavBar() {
   return (
@@ -19,15 +20,13 @@ export default function NavBar() {
             </Link>
           </div>
           <div className="col-3 navbar-box-horizontal d-flex justify-content-start">
-            <Link to="/movies" className="navbar-link">
-              Movies
-            </Link>
-            <Link to="/tv-shows" className="navbar-link">
-              TV Shows
-            </Link>
-            <Link to="/search" className="navbar-link">
-              Search
-            </Link>
+            {navbarLinks.map((link) => {
+              return (
+                <Link to={link.path} className="navbar-link">
+                  {link.innerHTML}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
