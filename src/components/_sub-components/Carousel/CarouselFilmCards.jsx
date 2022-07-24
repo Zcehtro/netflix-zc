@@ -1,12 +1,13 @@
 import { Carousel } from "react-responsive-carousel";
 
 export default function CarouselFilmCards() {
+  const [films, setFilms] = useState(null)
   const [carouselSlides, setCarouselSlides] = useState([[]]);
   const bsBreakpoints = [0, 576, 768, 992, 1200, 1400];
   const winWidth = window.innerWidth;
 
   useEffect(() => {
-    const getCarouselSize = async () => {
+    const getCarouselSize = () => {
       const postersInSlide = Math.max(
         ...bsBreakpoints.map((item) => {
           if (winWidth > item) return Math.floor(winWidth / 200);
