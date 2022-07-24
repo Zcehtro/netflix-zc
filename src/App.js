@@ -11,6 +11,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Home />} />
         <Route path="/films/:id" element={<Film />} />
       </Routes>
     </div>

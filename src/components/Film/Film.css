@@ -7,3 +7,8 @@
     max-width: 900px;
     margin: auto;
 }
+
+.film-is-new {
+  color: green;
+  font-weight: bold;
+}
