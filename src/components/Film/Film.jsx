@@ -13,7 +13,7 @@ export default function Film() {
       try {
         const { data } = await axios({
           method: "get",
-          url: `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.TMDB_API_KEY}`,
+          url: `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}`,
         });
         console.log(20, data);
         setFilm(data);
@@ -25,17 +25,17 @@ export default function Film() {
       try {
         const { data } = await axios({
           method: "get",
-          url: `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.TMDB_API_KEY}`,
+          url: `https://api.themoviedb.org/3/movie/${params.id}release_dates?api_key=${process.env.REACT_APP_TMDB_API_KEY}`,
         });
         console.log(21, data);
-        setFilm(data);
+        setFilmCertRelease(data);
       } catch (err) {
-        console.log("film error: " & err);
+        console.log("film error cert: " & err);
       }
     };
     getFilm();
     getFilmCertRelease();
-  }, []);
+  }, [params]);
 
   const isFilmNew = (filmDateString) => {
     const filmDate = new Date(filmDateString);
