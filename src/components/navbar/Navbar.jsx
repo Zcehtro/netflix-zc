@@ -22,7 +22,7 @@ export default function NavBar() {
           <div className="col-3 navbar-box-horizontal d-flex justify-content-start">
             {navbarLinks.map((link) => {
               return (
-                <Link to={link.path} className="navbar-link">
+                <Link to={link.path} className="navbar-link" key={link.path}>
                   {link.innerHTML}
                 </Link>
               );
