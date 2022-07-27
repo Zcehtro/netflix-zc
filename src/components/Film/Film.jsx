@@ -81,14 +81,6 @@ export default function Film() {
     return castShort;
   };
 
-  const getGenres = () => {
-    let genres = [];
-    film.details.genres.map((genre) => {
-      genres.push(genre.name);
-    });
-    return genres;
-  };
-
   console.log(20, film);
   return (
     film && (
@@ -154,7 +146,9 @@ export default function Film() {
                     <Link to={`/genres/${genre.id}`} className="film-actor-anchor">
                       {genre.name}
                     </Link>
-                    <span className="film-actor-anchor">, </span>
+                    {genre.id === film.details.genres[film.details.genres.length - 1].id ? null : (
+                      <span className="film-actor-anchor">, </span>
+                    )}
                   </>
                 );
               })}
