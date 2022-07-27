@@ -9,6 +9,15 @@
   width: 100%;
 }
 
+.film-logo {
+  width: 50%;
+  position: absolute;
+  bottom: 5%;
+  left: 1%;
+  font-size: 5rem;
+  text-shadow: -5px 5px black;
+}
+
 .div-film-backdrop {
   position: relative;
   margin: auto;
@@ -21,7 +30,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: linear-gradient(to bottom, transparent 85%, #181818 100%);
+  background: linear-gradient(to bottom, transparent 90%, #181818 100%);
 }
 
 .film-info-group {
@@ -64,6 +73,16 @@
 
 .film-group-subtitle {
   color: gray;
+}
+
+.film-actor-anchor {
+  text-decoration: none;
+  color: lightgrey;
+}
+
+.film-actor-anchor:hover {
+  color: white;
+  text-shadow: 0 0 10px white;
 }
 
 .film-genres {

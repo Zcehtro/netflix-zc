@@ -1,6 +1,6 @@
 import "./Film.css";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { intervalToDuration } from "date-fns";
 
@@ -55,6 +55,7 @@ export default function Film() {
 
   const getCertfication = () => {
     const index1 = film.release_dates.results.findIndex((country) => country.iso_3166_1 === "US");
+    if (index1 === -1) return "Certification not available";
     const releaseDates = film.release_dates.results[index1].release_dates;
 
     const index2 = releaseDates.findIndex((release) => release.type >= 3);
@@ -65,6 +66,7 @@ export default function Film() {
 
   const getFilmDurationFormatted = () => {
     const durationMilliseconds = Number(film.details.runtime) * 60 * 1000;
+    if (durationMilliseconds === 0) return "Runtime not available";
 
     const duration = intervalToDuration({ start: 0, end: durationMilliseconds });
     return `${duration.hours}h ${duration.minutes}m`;
@@ -73,10 +75,10 @@ export default function Film() {
   const getCastShort = () => {
     let castShort = [];
     film.credits.cast.map((actor) => {
-      if (castShort.length === 3) return;
-      castShort.push(actor.name);
+      if (castShort.length === 4) return;
+      castShort.push(actor);
     });
-    return castShort.join(", ");
+    return castShort;
   };
 
   const getGenres = () => {
@@ -84,7 +86,7 @@ export default function Film() {
     film.details.genres.map((genre) => {
       genres.push(genre.name);
     });
-    return genres.join(", ");
+    return genres;
   };
 
   console.log(20, film);
@@ -97,6 +99,15 @@ export default function Film() {
             src={`https://image.tmdb.org/t/p/w500${film.details.backdrop_path}`}
             alt="film-backdrop"
           />
+          {film.images.logos.length !== 0 ? (
+            <img
+              className="film-logo"
+              src={`https://image.tmdb.org/t/p/w500${film.images.logos[0].file_path}`}
+              alt="film-logo"
+            />
+          ) : (
+            <div className="film-logo">{film.details.title}</div>
+          )}
         </div>
         <div className="film-info-group row">
           <div className="film-info-group-left col-8">
@@ -120,11 +131,33 @@ export default function Film() {
           </div>
           <div className="film-info-group-right col-4">
             <div className="film-cast-short">
-              <span className="film-group-subtitle">Cast: </span> {getCastShort()},
-              <span style={{ fontStyle: "italic" }}> more</span>
+              <span className="film-group-subtitle">Cast: </span>
+              {getCastShort().map((actor) => {
+                return (
+                  <>
+                    <Link to={`/actors/${actor.id}`} className="film-actor-anchor">
+                      {actor.name}
+                    </Link>
+                    <span className="film-actor-anchor">, </span>
+                  </>
+                );
+              })}
+              <Link to="" className="film-actor-anchor" style={{ fontStyle: "italic" }}>
+                more
+              </Link>
             </div>
             <div className="film-genres">
-              <span className="film-group-subtitle">Genres: </span> {getGenres()}
+              <span className="film-group-subtitle">Genres: </span>
+              {film.details.genres.map((genre) => {
+                return (
+                  <>
+                    <Link to={`/genres/${genre.id}`} className="film-actor-anchor">
+                      {genre.name}
+                    </Link>
+                    <span className="film-actor-anchor">, </span>
+                  </>
+                );
+              })}
             </div>
             <div className="film-tags"></div>
           </div>
