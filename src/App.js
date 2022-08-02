@@ -2,8 +2,8 @@ import "./App.css";
 import NavBar from "./components/navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Film from "./components/Film/Film";
-import Film_test from "./_tests/film_test";
+import Movie from "./components/Movie/Movie";
+import Movie_test from "./_tests/movie";
 
 export default function App() {
   return (
@@ -12,9 +12,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Home />} />
-        <Route path="/films/:id" element={<Film />} />
-        <Route path="/testing" element={<Film_test />} />
+        <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/testing" element={<Movie_test />} />
       </Routes>
     </div>
   );

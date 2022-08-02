@@ -1,7 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 
-export default function CarouselFilmCards() {
-  const [films, setFilms] = useState(null)
+export default function CarouselMovieCards() {
+  const [movies, setMovies] = useState(null)
   const [carouselSlides, setCarouselSlides] = useState([[]]);
   const bsBreakpoints = [0, 576, 768, 992, 1200, 1400];
   const winWidth = window.innerWidth;
@@ -19,9 +19,9 @@ export default function CarouselFilmCards() {
       let n = 0;
       let m = 1;
 
-      films &&
-        films.map((film) => {
-          tempCarouselSlides[n].push(film);
+      movies &&
+        movies.map((movie) => {
+          tempCarouselSlides[n].push(movie);
           if (m > postersInSlide) {
             n += 1;
             m = 0;
@@ -36,11 +36,11 @@ export default function CarouselFilmCards() {
 
   return (
     <Carousel showThumbs={false} dynamicHeight={false}>
-      {films.map((film) => {
+      {movies.map((movie) => {
         return (
-          <div className="film-carousel-slide row g-0">
-            <div className="film-div-img col" key={film.id}>
-              <img src={`https://image.tmdb.org/t/p/w200${film.poster_path}`} alt="film-poster" />
+          <div className="movie-carousel-slide row g-0">
+            <div className="movie-div-img col" key={movie.id}>
+              <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="movie-poster" />
             </div>
           </div>
         );

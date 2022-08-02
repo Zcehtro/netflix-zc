@@ -1,15 +1,15 @@
-.film-main {
+.movie-main {
   background-color: #181818;
   color: white;
   font-weight: 500;
   padding-bottom: 3rem;
 }
 
-.film-backdrop {
+.movie-backdrop {
   width: 100%;
 }
 
-.film-logo {
+.movie-logo {
   width: 50%;
   position: absolute;
   bottom: 5%;
@@ -18,12 +18,12 @@
   text-shadow: -5px 5px black;
 }
 
-.div-film-backdrop {
+.div-movie-backdrop {
   position: relative;
   margin: auto;
 }
 
-.div-film-backdrop:after {
+.div-movie-backdrop:after {
   content: "";
   width: 100%;
   height: 100%;
@@ -33,17 +33,17 @@
   background: linear-gradient(to bottom, transparent 90%, #181818 100%);
 }
 
-.film-info-group {
+.movie-info-group {
   padding: 1rem 0 0;
 }
 
-.film-specific-info {
+.movie-specific-info {
   display: flex;
   justify-content: start;
   text-align: center;
 }
 
-.film-specific-info-item {
+.movie-specific-info-item {
   margin: 0 0.6rem 0 0;
   height: 3rem;
   display: flex;
@@ -51,40 +51,40 @@
   justify-content: center;
 }
 
-.film-specific-info-item p {
+.movie-specific-info-item p {
   margin: 0;
 }
 
-.film-info-certification {
+.movie-info-certification {
   border: 1px solid white;
   padding: 0 2px;
 }
 
-.film-short-summary,
-.film-info-group-right {
+.movie-short-summary,
+.movie-info-group-right {
   font-size: 14px;
   text-align: start;
 }
 
-.film-is-new {
+.movie-is-new {
   color: green;
   font-weight: bold;
 }
 
-.film-group-subtitle {
+.movie-group-subtitle {
   color: gray;
 }
 
-.film-actor-anchor {
+.movie-actor-anchor {
   text-decoration: none;
   color: lightgrey;
 }
 
-.film-actor-anchor:hover {
+.movie-actor-anchor:hover {
   color: white;
   text-shadow: 0 0 10px white;
 }
 
-.film-genres {
+.movie-genres {
   margin: 1rem 0 0;
 }
