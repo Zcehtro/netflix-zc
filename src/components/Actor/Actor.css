@@ -1,0 +1,38 @@
+.actor-main {
+  background-color: #181818;
+  color: white;
+  font-weight: 500;
+  padding: 2rem 0 3rem;
+}
+
+.actor-portrait {
+  width: 100%;
+}
+
+.div-actor-portrait {
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+.div-actor-portrait:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to bottom, transparent 95%, #181818 100%),
+    linear-gradient(to top, transparent 95%, #181818 100%),
+    linear-gradient(to left, transparent 95%, #181818 100%),
+    linear-gradient(to right, transparent 95%, #181818 100%);
+}
+
+.actor-name {
+  font-size: xx-large;
+  text-align: left;
+}
+
+.actor-subtitle {
+  text-align: start;
+}

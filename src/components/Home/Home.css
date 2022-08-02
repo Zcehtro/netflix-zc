@@ -1,6 +1,6 @@
 .home-main {
   /* border: 1px red solid; */
-  background-color: black;
+  background-color: #181818;
 }
 
 .movie-carousel {
@@ -8,18 +8,29 @@
   /* width: 100%; */
 }
 
+.movie-carousel-slide {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .movie-div-img {
-  /* margin: 0.5rem 0; */
-  /* border: 1px solid blue; */
+  margin: 0.5rem 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.movie-div-img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .movie-poster-image {
   border: 2px solid hsla(0, 0%, 100%, 0.8);
   border-radius: 10px;
-  transition: transform 0.2s ease-in-out;
+  width: 200px;
+  color: white;
 }
 
-.movie-poster-image:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+.movie-poster-anchor {
+  text-decoration: none;
 }

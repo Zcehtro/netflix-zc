@@ -6,7 +6,7 @@ import navbarLinks from "./Navbar-links";
 export default function NavBar() {
   return (
     <div className="navbar-main">
-      <div className="container-fluid py-2">
+      <div className="container py-2">
         <div className="row d-flex align-items-center">
           <div className="col-1 d-flex justify-content-center">
             <Link to="">

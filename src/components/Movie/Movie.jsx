@@ -84,76 +84,79 @@ export default function Movie() {
   console.log(20, movie);
   return (
     movie && (
-      <div className="movie-main container-fluid">
-        <div className="div-movie-backdrop">
-          <img
-            className="movie-backdrop"
-            src={`https://image.tmdb.org/t/p/w500${movie.details.backdrop_path}`}
-            alt="movie-backdrop"
-          />
-          {movie.images.logos.length !== 0 ? (
+      <div className="movie-main">
+        <div className=" container">
+          <div className="div-movie-backdrop">
             <img
-              className="movie-logo"
-              src={`https://image.tmdb.org/t/p/w500${movie.images.logos[0].file_path}`}
-              alt="movie-logo"
+              className="movie-backdrop"
+              src={`https://image.tmdb.org/t/p/w500${movie.details.backdrop_path}`}
+              alt="movie-backdrop"
             />
-          ) : (
-            <div className="movie-logo">{movie.details.title}</div>
-          )}
-        </div>
-        <div className="movie-info-group row">
-          <div className="movie-info-group-left col-8">
-            <div className="movie-specific-info">
-              {getIsMovieNew(movie.details.release_date) ? (
-                <div className="movie-specific-info-item">
-                  <p className="movie-is-new">New</p>
-                </div>
-              ) : null}
-              <div className="movie-specific-info-item">
-                <p className="movie-info-year">{getMovieReleaseYear()}</p>
-              </div>
-              <div className="movie-specific-info-item">
-                <p className="movie-info-certification">{getCertfication()} </p>
-              </div>
-              <div className="movie-specific-info-item">
-                <p className="movie-info-duration">{getMovieDurationFormatted()} </p>
-              </div>
-            </div>
-            <div className="movie-short-summary">{movie.details.overview}</div>
+            {movie.images.logos.length !== 0 ? (
+              <img
+                className="movie-logo"
+                src={`https://image.tmdb.org/t/p/w500${movie.images.logos[0].file_path}`}
+                alt="movie-logo"
+              />
+            ) : (
+              <div className="movie-logo">{movie.details.title}</div>
+            )}
           </div>
-          <div className="movie-info-group-right col-4">
-            <div className="movie-cast-short">
-              <span className="movie-group-subtitle">Cast: </span>
-              {getCastShort().map((actor) => {
-                return (
-                  <>
-                    <Link to={`/actors/${actor.id}`} className="movie-actor-anchor">
-                      {actor.name}
-                    </Link>
-                    <span className="movie-actor-anchor">, </span>
-                  </>
-                );
-              })}
-              <Link to="" className="movie-actor-anchor" style={{ fontStyle: "italic" }}>
-                more
-              </Link>
+          <div className="movie-info-group row">
+            <div className="movie-info-group-left col-8">
+              <div className="movie-specific-info">
+                {getIsMovieNew(movie.details.release_date) ? (
+                  <div className="movie-specific-info-item">
+                    <p className="movie-is-new">New</p>
+                  </div>
+                ) : null}
+                <div className="movie-specific-info-item">
+                  <p className="movie-info-year">{getMovieReleaseYear()}</p>
+                </div>
+                <div className="movie-specific-info-item">
+                  <p className="movie-info-certification">{getCertfication()} </p>
+                </div>
+                <div className="movie-specific-info-item">
+                  <p className="movie-info-duration">{getMovieDurationFormatted()} </p>
+                </div>
+              </div>
+              <div className="movie-short-summary">{movie.details.overview}</div>
             </div>
-            <div className="movie-genres">
-              <span className="movie-group-subtitle">Genres: </span>
-              {movie.details.genres.map((genre) => {
-                return (
-                  <>
-                    <Link to={`/genres/${genre.id}`} className="movie-actor-anchor">
-                      {genre.name}
-                    </Link>
-                    {genre.id === movie.details.genres[movie.details.genres.length - 1].id ? null : (
+            <div className="movie-info-group-right col-4">
+              <div className="movie-cast-short">
+                <span className="movie-group-subtitle">Cast: </span>
+                {getCastShort().map((actor) => {
+                  return (
+                    <>
+                      <Link to={`/actor/${actor.id}`} className="movie-actor-anchor">
+                        {actor.name}
+                      </Link>
                       <span className="movie-actor-anchor">, </span>
-                    )}
-                  </>
-                );
-              })}
+                    </>
+                  );
+                })}
+                <Link to="" className="movie-actor-anchor" style={{ fontStyle: "italic" }}>
+                  more
+                </Link>
+              </div>
+              <div className="movie-genres">
+                <span className="movie-group-subtitle">Genres: </span>
+                {movie.details.genres.map((genre) => {
+                  return (
+                    <>
+                      <Link to={`/genres/${genre.id}`} className="movie-actor-anchor">
+                        {genre.name}
+                      </Link>
+                      {genre.id ===
+                      movie.details.genres[movie.details.genres.length - 1].id ? null : (
+                        <span className="movie-actor-anchor">, </span>
+                      )}
+                    </>
+                  );
+                })}
+              </div>
+              <div className="movie-tags"></div>
             </div>
-            <div className="movie-tags"></div>
           </div>
         </div>
       </div>

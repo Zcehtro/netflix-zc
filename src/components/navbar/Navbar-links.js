@@ -1,6 +1,6 @@
 const navbarLinks = [
-  { path: "/movies", innerHTML: "Movies" },
-  { path: "/tv-shows", innerHTML: "TV Shows" },
+  { path: "/movie", innerHTML: "Movies" },
+  { path: "/tv-show", innerHTML: "TV Shows" },
   { path: "/search", innerHTML: "Search" },
   { path: "/testing", innerHTML: "*testing*" },
 ];

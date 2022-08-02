@@ -24,13 +24,13 @@ export default function Home() {
   return (
     movies && (
       <div className="home-main">
-        <div className="container-fluid movie-carousel">
-          <div className="movie-carousel-slide row g-0 d-flex justify-content-start align-items-center">
+        <div className="container movie-carousel">
+          <div className="movie-carousel-slide row g-0">
             {movies.map((movie) => {
               return (
-                <div className="col m-2" key={movie.id}>
+                <div className="col" key={movie.id}>
                   <div className="movie-div-img">
-                    <Link to={`/movie/${movie.id}`}>
+                    <Link to={`/movie/${movie.id}`} className="movie-poster-anchor">
                       <img
                         src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                         alt="movie-poster"
