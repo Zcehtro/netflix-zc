@@ -3,7 +3,7 @@ import NavBar from "./components/navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Movie from "./components/Movie/Movie";
-import Movie_test from "./_tests/movie";
+import Movie_test from "./_tests/movie_test";
 
 export default function App() {
   return (
