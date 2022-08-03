@@ -38,10 +38,21 @@ export default function Actor() {
   }, [params]);
 
   const creditsOrdered = () => {
-    const moviesSorted = actor.credits.cast.sort((a, b) => b.popularity - a.popularity);
-    const moviesFiltered = moviesSorted//filter((element, index) => moviesSorted.indexOf(element) !== index);
-    console.log(32, moviesFiltered);
-    return moviesFiltered;
+    let creditsFiltered = [];
+    const creditsSorted = actor.credits.cast.sort((a, b) => b.popularity - a.popularity);
+    for (let i = 0; i <= creditsSorted.length - 1; i++) {
+      let match = false;
+      for (let j = 0; j <= creditsFiltered.length - 1; j++) {
+        if (creditsSorted[i].id === creditsFiltered[j].id) {
+          match = true;
+        }
+      }
+      if (match === false) {
+        creditsFiltered.push(creditsSorted[i]);
+      }
+    }
+
+    return creditsFiltered;
   };
 
   console.log(30, actor);
@@ -62,7 +73,7 @@ export default function Actor() {
             <div className="col-8">
               <p className="actor-name">{actor.details.name}</p>
               <p className="actor-subtitle">Biography</p>
-              <p>{actor.details.biography}</p>
+              <p className="actor-biography">{actor.details.biography}</p>
             </div>
           </div>
           <div className="row movie-carousel-slide g-0">

@@ -36,3 +36,8 @@
 .actor-subtitle {
   text-align: start;
 }
+
+.actor-biography {
+    text-align: left;
+    font-weight: normal;
+}
